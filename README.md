@@ -2,7 +2,7 @@
 
 > Morfem = unit linguistik terkecil yang bermakna. Nama ini mencerminkan inti sistem: memecah teks menjadi morfem dasar untuk pencarian yang akurat.
 
-Proyek tugas mata kuliah **Sistem Temu Kembali Informasi (STKI)** — Teknik Informatika.  
+Proyek tugas mata kuliah **Natural Language** — Teknik Informatika.  
 Dibangun di atas XAMPP (PHP + MySQL) dengan pipeline NLP Bahasa Indonesia.
 
 ---
@@ -34,8 +34,7 @@ Dibangun di atas XAMPP (PHP + MySQL) dengan pipeline NLP Bahasa Indonesia.
 ## Struktur Proyek
 
 ```
-stki/
-├── morfem/
+Morfem/
 │   ├── core/
 │   │   ├── Database.php        # MySQLi singleton, UTF8MB4
 │   │   ├── Preprocessor.php    # NLP pipeline + reindexAll()
@@ -68,14 +67,14 @@ stki/
 
 ```bash
 # 1. Clone ke htdocs
-git clone https://github.com/gnarlyaxx/Morfem.git C:/xampp/htdocs/stki
+git clone https://github.com/gnarlyaxx/Morfem.git C:/xampp/htdocs/Morfem
 
 # 2. Install Sastrawi
-cd C:/xampp/htdocs/stki
+cd C:/xampp/htdocs/Morfem
 composer require sastrawi/sastrawi
 
 # 3. Import database
-# Buka phpMyAdmin → buat database 'stki' → import SQL dari dosen
+# Buka phpMyAdmin → buat database 'morfem' → import SQL
 ```
 
 ### Konfigurasi Database
@@ -86,12 +85,12 @@ Edit `morfem/core/Database.php` jika kredensial berbeda dari default XAMPP:
 private static string $host = 'localhost';
 private static string $user = 'root';
 private static string $pass = '';          // default XAMPP: kosong
-private static string $dbName = 'stki';
+private static string $dbName = 'morfem';
 ```
 
 ### Akses
 
-Buka browser → `http://localhost/stki/morfem/`
+Buka browser → `http://localhost/morfem/`
 
 ---
 
@@ -133,15 +132,6 @@ $$J(Q, D) = \frac{A}{A + B + C} \qquad D(Q, D) = \frac{2A}{2A + B + C}$$
 
 ---
 
-## Riwayat Versi
-
-| Versi | Perubahan |
-|---|---|
-| `v1.2.1` | Fix raw LaTeX → HTML entities; auto-sync query ke halaman perhitungan |
-| `v1.2.0` | Halaman Perhitungan Matematis Komprehensif |
-| `v1.1.0` | Bandingkan Algoritma, NLP Pipeline simulator |
-| `v1.0.1` | Bugfix & perbaikan tema |
-| `v1.0.0` | Setup awal Morfem |
 
 Lihat [`CHANGELOG.md`](./CHANGELOG.md) untuk detail lengkap.
 
@@ -150,6 +140,6 @@ Lihat [`CHANGELOG.md`](./CHANGELOG.md) untuk detail lengkap.
 ## Dibuat oleh
 
 **Boby Harjuna Pangestu**  
-Teknik Informatika — Mata Kuliah STKI
+Teknik Informatika — Mata Kuliah Natural Language
 
 Powered by [Sastrawi](https://github.com/sastrawi/sastrawi) &bull; Vector Space Model &bull; Jaccard &bull; Dice

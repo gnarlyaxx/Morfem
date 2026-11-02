@@ -11,12 +11,19 @@ class Database
     {
         if (self::$connectionInstance === null) {
             mysqli_report(MYSQLI_REPORT_OFF);
-            $activeConnection = @mysqli_connect(self::$dbHost, self::$dbUser, self::$dbPassword, self::$dbName);
+
+            $host = getenv('DB_HOST') ?: self::$dbHost;
+            $user = getenv('DB_USER') ?: self::$dbUser;
+            $pass = getenv('DB_PASS') !== false ? getenv('DB_PASS') : self::$dbPassword;
+            $name = getenv('DB_NAME') ?: self::$dbName;
+
+            $activeConnection = @mysqli_connect($host, $user, $pass, $name);
 
             if (!$activeConnection) {
                 die('<div style="font-family:monospace;padding:16px;background:#fee2e2;color:#991b1b;border:1px solid #f87171;margin:20px auto;max-width:600px;">
-                    <strong>Database Connection Error:</strong> Pastikan MySQL aktif di XAMPP dan database <code>stki</code> sudah di-import.<br>
-                    Detail: ' . htmlspecialchars(mysqli_connect_error()) . '
+                    <strong>Database Connection Error:</strong> Pastikan MySQL aktif dan database <code>' . htmlspecialchars($name) . '</code> sudah di-import.<br>
+                    Detail: ' . htmlspecialchars(mysqli_connect_error()) . '<br><br>
+                    <small>Catatan untuk Hosting: Sesuaikan kredensial di <code>core/Database.php</code> atau atur Environment Variables (DB_HOST, DB_USER, DB_PASS, DB_NAME).</small>
                 </div>');
             }
 

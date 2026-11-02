@@ -52,6 +52,22 @@
       </p>
     </div>
 
+    <!-- ENTRY v1.3.0 -->
+    <div class="changelog-entry">
+      <div>
+        <span class="version-tag">v1.3.0</span>
+        <span class="release-date">&bull; 2026-11-02</span>
+      </div>
+      <h3 style="font-size:0.95rem;margin-top:0.4rem;font-weight:700;">Manajemen Kata Baru, Export Database, &amp; Sinkronisasi Hosting</h3>
+      <ul class="change-list">
+        <li><strong>Added:</strong> Fitur manajemen kata baru (Stopword) untuk menambah, memfilter, dan menghapus kata stopword langsung ke database MySQL.</li>
+        <li><strong>Added:</strong> Fitur 1-klik unduh backup database (.sql) langsung dari web untuk sinkronisasi dari localhost ke hosting.</li>
+        <li><strong>Added:</strong> Panduan auto-save dan penjelasan sinkronisasi database server localhost vs hosting.</li>
+        <li><strong>Added:</strong> Dukungan Environment Variables (DB_HOST, DB_USER, DB_PASS, DB_NAME) pada Database.php.</li>
+        <li><strong>Changed:</strong> Label navigasi diperbarui menjadi 'Kelola Dokumen &amp; Kata'.</li>
+      </ul>
+    </div>
+
     <!-- ENTRY v1.1.0 -->
     <div class="changelog-entry">
       <div>
